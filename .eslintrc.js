@@ -56,9 +56,12 @@ module.exports = {
     // allow debugger during development
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
     "comma-dangle": ["error", "never"],
-    'import/no-unresolved':0,
+    "import/no-unresolved": 0,
     "no-param-reassign": 0,
     "func-names": 0,
-    "import/prefer-default-export": 0
+    "import/prefer-default-export": 0,
+    "import/first": 0,
+    "no-plusplus": 0,
+    "no-console": ["error", { allow: ["warn", "error", "log"] }],
   },
 };

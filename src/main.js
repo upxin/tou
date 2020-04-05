@@ -1,9 +1,8 @@
-/* eslint-disable import/first */
 import Vue from 'vue';
 import App from './App';
 import router from './router';
 
-import '@/common/stylus/index.styl';
+import '@/common/scss/index.scss';
 
 Vue.config.productionTip = false;
 
