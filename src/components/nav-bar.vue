@@ -2,14 +2,16 @@
     <section :class="b('')">
         <div :class="b('wrapper')" ref="wrap" :style=" trans ">
             <a
-                v-for="(title, i) of titles"
-                :key="title"
-                :ref="`wrap${i}`"
+                v-for="(item, i) of titles"
+                :key="item.tag"
+                :ref="`title${i}`"
                 :class="{ active: active === i }"
-                @click="hanlderNav(i)"
-            >{{title}}</a>
+                @click="hanlderNav(item, i)"
+            >{{item.title}}</a>
         </div>
-        <router-view />
+        <a :class="b('btn')">
+            <span></span>
+        </a>
     </section>
 </template>
 
@@ -20,17 +22,18 @@ export default create({
     name: 'navbar',
     data() {
         return {
-            active: 0,
+            active: this.getLoc('active') || 0,
             titles: [
-                '军事',
-                '娱乐',
-                '视频',
-                '影视',
-                '愉快',
-                '你你',
-                '是谁',
-                '事实',
-                '与人'
+                { title: '推荐', tag: 'recommend' },
+                { title: '军事', tag: 'military' },
+                { title: '娱乐', tag: 'entertainment' },
+                { title: '视频', tag: 'video' },
+                { title: '影视', tag: 'media' },
+                { title: '热点', tag: 'hot' },
+                { title: '科技', tag: 'technology' },
+                { title: '汽车', tag: 'car' },
+                { title: '房产', tag: 'house' },
+                { title: '体育', tag: 'sports' }
             ],
             trans: {
                 transform: ''
@@ -40,13 +43,25 @@ export default create({
     created() {
         this.prevOffset = 0; // 保存上次滚动的偏移
     },
+    mounted() {
+        this.animate(this.active);
+    },
     methods: {
-        hanlderNav(i) {
-            this.active = i;
+        getLoc(v) {
+            return JSON.parse(window.sessionStorage.getItem(v));
+        },
+        setLoc(v) {
+            return window.sessionStorage.setItem('active', JSON.stringify(v));
+        },
+        hanlderNav(item, i) {
             this.animate(i);
+            if (this.active === i) return;
+            this.active = i;
+            this.setLoc(i);
+            this.$router.push({ path: `${item.tag}` });
         },
         animate(i) {
-            const el = this.$refs[`wrap${i}`][0];
+            const el = this.$refs[`title${i}`][0];
             const elWith = el.offsetWidth;
             const elLeftDistance = el.getBoundingClientRect().left; // 元素距离浏览器左边的距离
             const viewport = window.innerWidth;
@@ -78,10 +93,17 @@ export default create({
 @import '../common/scss/mixins.scss';
 
 .tt-navbar {
+    font-size: 0;
     overflow: hidden;
+    position: fixed;
+    background: #f4f5f6;
+    top: 44px;
+    left: 0;
+    z-index: 100;
     &__wrapper {
+        font-size: 0;
         display: inline-block;
-        transition: 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        padding-right: 44px;
         @include no-wrap;
         a {
             white-space: nowrap;
@@ -100,6 +122,52 @@ export default create({
         }
         & > .active {
             color: $color-theme;
+        }
+    }
+    &__btn {
+        display: block;
+        position: fixed;
+        top: 44px;
+        right: 0;
+        width: 40px;
+        height: 36px;
+        background-size: 20px;
+        font-size: 35px;
+        color: #f85959;
+        text-align: center;
+        line-height: 36px;
+        span {
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 36px;
+            background-size: 20px;
+            font-size: 35px;
+            color: #f85959;
+            text-align: center;
+            line-height: 36px;
+            box-shadow: -6px -2px 27px rgba(177, 173, 173, 0.2);
+            background: #f4f5f6;
+            &::before {
+                position: absolute;
+                content: ' ';
+                height: 2px;
+                width: 17px;
+                background-color: #f85959;
+                top: 50%;
+                left: 50%;
+                transform: translate3d(-50%, -50%, 0);
+            }
+            &::after {
+                position: absolute;
+                content: ' ';
+                height: 17px;
+                width: 2px;
+                background-color: #f85959;
+                top: 50%;
+                left: 50%;
+                transform: translate3d(-50%, -50%, 0);
+            }
         }
     }
 }

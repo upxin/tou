@@ -10,6 +10,6 @@ export default function (sfc) {
     sfc.install = sfc.install || install;
     sfc.mixins = sfc.mixins || [];
     sfc.mixins.push(bem);
-    sfc.methods = sfc.methods || {};
+    // sfc.methods = sfc.methods || {};
     return sfc;
 }

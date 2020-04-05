@@ -62,6 +62,8 @@ module.exports = {
     "import/prefer-default-export": 0,
     "import/first": 0,
     "no-plusplus": 0,
+    "no-unused-expressions": 0,
+    "space-before-function-paren": 0,
     "no-console": ["error", { allow: ["warn", "error", "log"] }],
   },
 };

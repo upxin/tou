@@ -31,6 +31,10 @@ export default create({
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
     &__letter {
         background: url(../imgs/letter.png) center no-repeat;
         background-size: contain;
@@ -42,6 +46,7 @@ export default create({
     }
     &__logo {
         display: table;
+        font-size: 0;
         a {
             display: inline-block;
             background: url(../imgs/logo.png) no-repeat center;

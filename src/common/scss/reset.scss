@@ -107,7 +107,6 @@ section {
 }
 
 a {
-  color: #7e8c8d;
   -webkit-backface-visibility: hidden;
   text-decoration: none;
 }
@@ -122,7 +121,8 @@ html {
 
 body {
   -webkit-text-size-adjust: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: #fff;
   line-height: 1;
   width: 100%;
+  color: #222;
 }
