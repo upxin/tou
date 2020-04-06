@@ -53,6 +53,7 @@ export default create({
             border-radius: 2px;
             margin-right: 5px;
             &:nth-child(1) {
+                box-sizing: content-box;
                 width: 24px;
                 font-size: 9px;
                 color: #f85959;

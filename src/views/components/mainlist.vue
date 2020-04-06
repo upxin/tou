@@ -121,7 +121,8 @@ export default create({
             border-radius: 2px;
             margin-right: 5px;
             &:nth-child(1) {
-                width: 24px;
+                box-sizing: content-box;
+                width: 12px;
                 font-size: 9px;
                 color: #f85959;
                 border-color: rgba(248, 89, 89, 0.5);
