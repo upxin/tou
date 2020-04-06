@@ -2,25 +2,25 @@
     <div id="app">
         <main>
             <Header />
-            <nav-bar></nav-bar>
+            <Tab />
             <Footer />
-            <transition name="fade-transform" mode="out-in">
+            <keep-alive>
                 <router-view></router-view>
-            </transition>
+            </keep-alive>
         </main>
     </div>
 </template>
 
 <script>
 import Header from '@/components/header';
-import NavBar from '@/components/nav-bar';
+import Tab from '@/components/tab';
 import Footer from '@/components/footer';
 
 export default {
     name: 'App',
     components: {
         Footer,
-        NavBar,
+        Tab,
         Header
     },
     methods: {}

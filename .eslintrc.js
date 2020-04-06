@@ -64,6 +64,9 @@ module.exports = {
     "no-plusplus": 0,
     "no-unused-expressions": 0,
     "space-before-function-paren": 0,
+    "no-mixed-operators": 0,
+    "max-len": 0,
+    "no-underscore-dangle": 0,
     "no-console": ["error", { allow: ["warn", "error", "log"] }],
   },
 };

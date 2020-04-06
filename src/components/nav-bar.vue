@@ -100,6 +100,7 @@ export default create({
     top: 44px;
     left: 0;
     z-index: 100;
+    width: 100%;
     &__wrapper {
         font-size: 0;
         display: inline-block;
@@ -151,7 +152,7 @@ export default create({
             &::before {
                 position: absolute;
                 content: ' ';
-                height: 2px;
+                height: 4px;
                 width: 17px;
                 background-color: #f85959;
                 top: 50%;
@@ -162,7 +163,7 @@ export default create({
                 position: absolute;
                 content: ' ';
                 height: 17px;
-                width: 2px;
+                width: 4px;
                 background-color: #f85959;
                 top: 50%;
                 left: 50%;

@@ -60,9 +60,17 @@ export default create({
         margin-right: 12px;
         font-weight: normal;
         line-height: 21px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
     }
     &__left {
         width: 67%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         &__dots {
             color: #999;
             overflow: hidden;
