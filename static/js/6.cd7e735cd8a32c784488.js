@@ -1,0 +1,2 @@
+webpackJsonp([6],{"T/QE":function(e,t){},xiBQ:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var s=n("eKM9"),r=n("vV7r"),o=Object(s.a)({name:"sports",components:{PageList:r.a}}),a={render:function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("section",{class:e.b("")},[n("page-list",{scopedSlots:e._u([{key:"list",fn:function(){return[e._v("sports")]},proxy:!0}])})],1)},staticRenderFns:[]};var c=n("VU/8")(o,a,!1,function(e){n("T/QE")},"data-v-480dedd2",null);t.default=c.exports}});
+//# sourceMappingURL=6.cd7e735cd8a32c784488.js.map
