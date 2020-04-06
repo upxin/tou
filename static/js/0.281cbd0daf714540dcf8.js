@@ -1,0 +1,2 @@
+webpackJsonp([0],{KpWi:function(e,t){},eo3Y:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var c=n("eKM9"),r=n("vV7r"),a=Object(c.a)({name:"car",components:{PageList:r.a}}),s={render:function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("section",{class:e.b("")},[n("page-list",{scopedSlots:e._u([{key:"list",fn:function(){return[e._v("car")]},proxy:!0}])})],1)},staticRenderFns:[]};var o=n("VU/8")(a,s,!1,function(e){n("KpWi")},"data-v-7b6dcf39",null);t.default=o.exports}});
+//# sourceMappingURL=0.281cbd0daf714540dcf8.js.map

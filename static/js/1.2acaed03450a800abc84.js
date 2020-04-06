@@ -1,0 +1,2 @@
+webpackJsonp([1],{DuB3:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var a=n("eKM9"),s=n("vV7r"),i=Object(a.a)({name:"media",components:{PageList:s.a}}),r={render:function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("section",{class:e.b("")},[n("page-list",{scopedSlots:e._u([{key:"list",fn:function(){return[e._v("media")]},proxy:!0}])})],1)},staticRenderFns:[]};var c=n("VU/8")(i,r,!1,function(e){n("bZHi")},"data-v-76ed26e9",null);t.default=c.exports},bZHi:function(e,t){}});
+//# sourceMappingURL=1.2acaed03450a800abc84.js.map
