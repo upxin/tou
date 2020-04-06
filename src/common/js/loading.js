@@ -1,8 +1,8 @@
 import LoadingCom from '@/base/Loading';
 
-const Loading = {
+const SyncLoading = {
     install(Vue) {
         Vue.component('Loading', LoadingCom);
     }
 };
-export default Loading;
+export default SyncLoading;
