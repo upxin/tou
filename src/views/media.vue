@@ -1,17 +1,25 @@
 <template>
     <section :class="b('')">
-        <page-list>
-            <template v-slot:list>media</template>
+        <page-list v-show="!isLoading">
+            <template v-slot:list>sports</template>
         </page-list>
+        <Loading v-show="isLoading"></Loading>
     </section>
 </template>
 
 <script type="text/ecmascript-6">
 import create from '@/utils/create';
 import PageList from '@/base/pagelist';
+import { likeLoading } from '@/common/js/mixins';
 
 export default create({
-    name: 'media',
+    name: 'sports',
+    mixins: [likeLoading],
+    data() {
+        return {
+            isLoading: true
+        };
+    },
     components: {
         PageList
     }

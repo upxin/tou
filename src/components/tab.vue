@@ -2,7 +2,11 @@
     <section :class="b('')">
         <div :class="b('wrapper')" ref="wrap">
             <router-link :key="item.tag" v-for="(item,i) of titles" tag="a" :to="`/${item.tag}`">
-                <span :ref="`title${i}`" @click="getSleft(i)">{{item.title}}</span>
+                <span
+                    :class="{ active: active === i }"
+                    @click="getSleft(i)"
+                    :ref="`title${i}`"
+                >{{item.title}}</span>
             </router-link>
         </div>
         <a :class="b('btn')">
@@ -24,10 +28,10 @@ export default create({
             titles: [
                 { title: '推荐', tag: 'recommend' },
                 { title: '军事', tag: 'military' },
+                { title: '热点', tag: 'hot' },
                 { title: '娱乐', tag: 'entertainment' },
                 { title: '视频', tag: 'video' },
                 { title: '影视', tag: 'media' },
-                { title: '热点', tag: 'hot' },
                 { title: '科技', tag: 'technology' },
                 { title: '汽车', tag: 'car' },
                 { title: '房产', tag: 'house' },
@@ -38,6 +42,7 @@ export default create({
     },
     methods: {
         getSleft(i) {
+            this.active = i;
             const el = this.$refs.wrap;
             const target = this.$refs[`title${i}`][0];
 
@@ -103,14 +108,14 @@ export default create({
             text-decoration: none;
             font-size: 17px;
             line-height: 36px;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
             span {
                 // 为了让滚动放在正中，这里计算按span标签的左侧算的
                 display: block;
                 padding: 0 13px;
-            }
-            &.router-link-active {
-                color: $color-theme;
+                &.active {
+                    color: $color-theme;
+                }
             }
             &:nth-last-child(1) {
                 margin-left: 13px;

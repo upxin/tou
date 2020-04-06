@@ -1,10 +1,13 @@
 <template>
-    <page-list>
-        <template v-slot:list>
-            <Top :lists="lists" />
-            <MainList :data="data" />
-        </template>
-    </page-list>
+    <div>
+        <page-list v-show="!isLoading">
+            <template v-slot:list>
+                <Top :lists="lists" />
+                <MainList :data="data" />
+            </template>
+        </page-list>
+        <Loading v-show="isLoading"></Loading>
+    </div>
 </template>
 
 <script type="text/ecmascript-6">
@@ -12,11 +15,14 @@ import create from '@/utils/create';
 import PageList from '@/base/pagelist';
 import Top from '@/views/components/top';
 import MainList from '@/views/components/mainlist';
+import { likeLoading } from '@/common/js/mixins';
 
 export default create({
     name: 'recommend',
+    mixins: [likeLoading],
     data() {
         return {
+            isLoading: true,
             data: [
                 { title: '', id: 'edcrfv' },
                 { title: '', id: 'tgbyhn' },
