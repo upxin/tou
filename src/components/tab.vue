@@ -1,6 +1,6 @@
 <template>
     <section :class="b('')">
-        <div :class="b('wrapper')" ref="wrap">
+        <div :class="b('wrapper')" ref="wrap" class="tt-hairline--bottom">
             <router-link :key="item.tag" v-for="(item,i) of titles" tag="a" :to="`/${item.tag}`">
                 <span
                     :class="{ active: active === i }"
@@ -9,7 +9,7 @@
                 >{{item.title}}</span>
             </router-link>
         </div>
-        <a :class="b('btn')">
+        <a :class="b('btn')" class="tt-hairline--bottom">
             <span></span>
         </a>
     </section>
@@ -57,12 +57,12 @@ export default create({
             this.cancelRaf(scrollLeftRafId);
             const taht = this;
             let count = 0;
+            // 滚动动画计算会有误差
             const frames =
                 duration === 0 ? 1 : Math.round((duration * 1000) / 16);
 
             function animate() {
                 el.scrollLeft += (to - from) / frames;
-
                 if (++count < frames) {
                     taht.raf(animate);
                 }
@@ -93,6 +93,7 @@ export default create({
     width: 100%;
     height: 36px;
     &__wrapper {
+        transition: all 0.3s;
         font-size: 0;
         overflow: hidden;
         overflow-x: scroll;

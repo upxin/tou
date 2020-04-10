@@ -32,7 +32,7 @@ export default create({
     background-size: 100% 100%;
     color: #222;
     bottom: 0;
-    z-index: 999;
+    z-index: 9999;
     & > a {
         display: flex;
         padding: 0 15px;

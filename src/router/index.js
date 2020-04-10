@@ -11,7 +11,7 @@ function lazyLoadView(AsyncView) {
         // 异步组件加载时使用的组件
         loading: Loading,
         // 加载失败时使用的组件
-        // error: require("@/components/public/RouteError.vue").default,
+        // error: require("@/error.vue").default,
         // 展示加载时组件的延时时间。默认值是 200 (毫秒)
         delay: 200,
         // 如果提供了超时时间且组件加载也超时了，

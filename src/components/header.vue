@@ -1,6 +1,6 @@
 <template>
     <header :class="b('')">
-        <div :class="b('letter')"></div>
+        <div :class="b('letter')" @click="handleLetter"></div>
         <div :class="b('logo')">
             <a href="javascript:;"></a>
             <i></i>
@@ -14,8 +14,10 @@ import create from '@/utils/create';
 
 export default create({
     name: 'header',
-    data() {
-        return {};
+    methods: {
+        handleLetter() {
+            this.bus.$emit('pop', true);
+        }
     }
 });
 </script>
