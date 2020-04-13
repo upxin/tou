@@ -91,6 +91,7 @@ export default create({
         width: 33%;
         height: px2rem(74);
         background: url(../../imgs/r.jpeg) no-repeat;
+        background-size: 100% 100%;
     }
     &__someimg {
         margin-top: 6px;
